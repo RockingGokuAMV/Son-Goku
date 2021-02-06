@@ -181,13 +181,13 @@ def new_member(update: Update, context: CallbackContext):
                     reply_to_message_id=reply)
                 welcome_log = (f"{html.escape(chat.title)}\n"
                                f"#USER_JOINED\n"
-                               f"Bot Owner just joined the chat")
+                               f"Bot Owner just joined the chat!")
                 continue
 
             # Welcome Devs
             elif new_mem.id in DEV_USERS:
                 update.effective_message.reply_text(
-                    "Whoa! A member of the Heroes Association just joined!",
+                    "Whoa! A member of the Dragon Ball Chat just joined!",
                     reply_to_message_id=reply,
                 )
                 continue
@@ -495,7 +495,7 @@ def left_member(update: Update, context: CallbackContext):
             # Give the devs a special goodbye
             elif left_mem.id in DEV_USERS:
                 update.effective_message.reply_text(
-                    "See you later at the Hero's Association!",
+                    "See you later at Dragon Ball Chat!",
                     reply_to_message_id=reply,
                 )
                 return
@@ -681,7 +681,7 @@ def set_welcome(update: Update, context: CallbackContext) -> str:
         return ""
 
     sql.set_custom_welcome(chat.id, content, text, data_type, buttons)
-    msg.reply_text("Successfully set custom welcome message!")
+    msg.reply_text("Successfully set custom welcome message! Now I will greet users!")
 
     return (f"<b>{html.escape(chat.title)}:</b>\n"
             f"#SET_WELCOME\n"
