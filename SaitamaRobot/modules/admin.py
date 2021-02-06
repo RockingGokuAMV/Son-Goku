@@ -211,12 +211,12 @@ def set_title(update: Update, context: CallbackContext):
 
     if user_member.status == 'creator':
         message.reply_text(
-            "This person CREATED the chat, how can i set custom title for him?")
+            "This person CREATED the chat, how can i set custom title for him? He should change himself.")
         return
 
     if not user_member.status == 'administrator':
         message.reply_text(
-            "Can't set title for non-admins!\nPromote them first to set custom title!"
+            "Bruh, can't set title for non-admins!\nPromote them first to set custom title!"
         )
         return
 
